@@ -1,6 +1,7 @@
 from fractions import Fraction
 from decimal import Decimal, getcontext
 import matplotlib.pyplot as plt
+import time
 
 # ------------------ ПЕРВОЕ ЗАДАНИЕ ------------------
 
@@ -12,8 +13,14 @@ def epsilon():
 
 
 def task1():
-    print("\nЗадание 1. Машинный эпсилон")
-    print("Эпсилон =", epsilon())
+    start = time.perf_counter()
+
+    result = get_x(30)
+
+    end = time.perf_counter()
+
+    print("Результат:", result)
+    print("Время выполнения:", end - start, "секунд")
 
 
 # ------------------ ВТОРОЕ ЗАДАНИЕ ------------------
@@ -39,9 +46,11 @@ def get_x(n):
 
 
 def task2():
-    print("\nЗадание 2. Последовательность Мюллера")
+    start = time.perf_counter()
     n = int(input("Введите n: "))
     print("x =", get_x(n))
+    end = time.perf_counter()
+    print("Время выполнения:", end - start, "секунд")
 
 
 # ------------------ ТРЕТЬЕ ЗАДАНИЕ ------------------
@@ -77,6 +86,7 @@ def task3():
     stavka = x / Decimal(1200)
 
     # Пункт а
+    start = time.perf_counter()
     A = Ipoteka(S, x, n)
     A = A.quantize(Decimal("0.01"))
     print("\nПункт а) Платёж:", A, "рублей")
@@ -141,8 +151,9 @@ def task3():
     plt.ylabel("Проценты, руб.")
     plt.grid(True)
     plt.show()
-
-
+    
+    end = time.perf_counter()
+    print("Время выполнения:", end - start, "секунд")
 # ------------------ ЧЕТВЁРТОЕ ЗАДАНИЕ ------------------
 
 # Пункт а) Decimal
@@ -194,6 +205,7 @@ def get_x_42(n):
 
 
 def task4():
+    start = time.perf_counter()
     print("\nЗадание 4. Decimal и Fraction")
     n = int(input("Введите n: "))
 
@@ -207,6 +219,8 @@ def task4():
     print(result)
     print("Десятичное представление:", float(result))
 
+    end = time.perf_counter()
+    print("Время выполнения:", end - start, "секунд")
 
 # ------------------ ГЛАВНОЕ МЕНЮ ------------------
 
