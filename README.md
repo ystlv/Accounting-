@@ -1,2 +1,6 @@
-# Accounting-
-the first project in python 
+# Accounting- 
+# проект состоит из 4 заданий 
+1) вычисление машинного эпсилона
+2) последовательность Мюллера
+3) Ипотечный калькулятор
+4) Decimal и Fracthion
